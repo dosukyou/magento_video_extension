@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * open license 
+ */
+-->
+<config>
+    <sections>
+        <icc_vchannel translate="label" module="icc_vchannel">
+            <label>Gallery Settings</label>
+            <tab>general</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1100</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <image translate="label">
+                    <label>Image Options</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>100</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <category_list_image_width translate="label">
+                            <label>Category List Image Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>100</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </category_list_image_width>
+                        <category_list_image_height translate="label">
+                            <label>Category List Image Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>200</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </category_list_image_height>
+                        <list_image_width translate="label">
+                            <label>List Item Image Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>300</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </list_image_width>
+                        <list_image_height translate="label">
+                            <label>List Item Image Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>400</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </list_image_height>
+                        <box_image_width translate="label">
+                            <label>Lightbox Image Width</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>500</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </box_image_width>
+                        <box_image_height translate="label">
+                            <label>Lightbox Image Height</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>600</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </box_image_height>
+                    </fields>
+                </image>
+            </groups>
+        </icc_vchannel>
+    </sections>
+</config>

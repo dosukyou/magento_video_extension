@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!--
+/**
+ *  open license
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <block type="icc_vchannel/scripts" name="gallery_scripts" template="icc/vchannel/scripts.phtml"/>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>open/lib/jquery/colorbox/colorbox.css</name>
+            </action>
+            <action method="addCss">
+                <name>css/open/gallery.css</name>
+            </action>
+        </reference>
+    </default>
+    <icc_vchannel>
+        <update handle="page_one_column" />
+    </icc_vchannel>
+
+    <icc_vchannel_index_index>
+        <reference name="content">
+            <block type="icc_vchannel/home" name="gallery_home" template="icc/vchannel/home.phtml" />
+        </reference>
+    </icc_vchannel_index_index>
+
+    <icc_vchannel_category_view>
+        <reference name="content">
+            <block type="icc_vchannel/category_view" name="gallery_category_view" template="icc/vchannel/category/view.phtml">
+                <block type="icc_vchannel/category_view_item_list" name="gallery_item_list" as="item_list" template="icc/vchannel/item/list.phtml" />
+            </block>
+        </reference>
+    </icc_vchannel_category_view>
+
+    <icc_vchannel_item_view_image>
+        <reference name="content">
+            <block type="icc_vchannel/item_view" name="gallery_item_view" template="icc/vchannel/item/view/image.phtml" />
+        </reference>
+    </icc_vchannel_item_view_image>
+
+    <icc_vchannel_item_view_video>
+        <reference name="content">
+            <block type="icc_vchannel/item_view" name="gallery_item_view" template="icc/vchannel/item/view/video.phtml" />
+        </reference>
+    </icc_vchannel_item_view_video>
+</layout>

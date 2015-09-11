@@ -1,0 +1,21 @@
+.gallery-list {
+    display: table-row;
+}
+.gallery-list .gallery-item {
+    display: table-cell;
+    padding: 0 10px 10px 0;
+}
+
+.gallery-list .gallery-item a {
+    display: block;
+}
+.gallery-list .gallery-item .gallery-image {
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    padding: 5px;
+}
+.gallery-list .gallery-item .gallery-title {
+    background: #3399cc;
+    color: #fff;
+    padding: 5px 6px;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+* open license 
+*/
+-->
+<config>
+    <modules>
+        <ICC_Vchannel>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Core/>
+            </depends>
+        </ICC_Vchannel>
+    </modules>
+</config>

@@ -1,0 +1,32 @@
+<?php
+/**
+ * @Open License
+ */
+
+/**  ICC_Vchannel_Block_Item_List $this */
+/**  ICC_Vchannel_Model_Category $item */
+$item           = $this->getCategory();
+/**  ICC_Vchannel_Model_Resource_Item_Collection $itemCollection */
+$items_Collection = $this->getItemCollection();
+$helper         = Mage::helper('icc_vchannel');
+$imgWidth     = $helper->getListImageWidth();
+$imgHeight    = $helper->getListImageHeight();
+$colCount    = $this->hasData('column_count') ? $this->getData('column_count') : 4;
+?>
+<h1><?php echo $item->getTitle();?></h1>
+<ul class="gallery-list gallery-item-list">
+    <?php $i = 0; foreach ($items_Collection as $item):
+        /** ICC_Vchannel_Model_Item $item */ ?>
+    <?php if($i && 0 == $i%$colCount):?>
+    </ul><ul class="gallery-list gallery-item-list">
+    <?php endif;?>
+        <li class="gallery-item">
+            <a href="<?php echo $this->getItemBoxUrl($item);?>" class="gallery-image gallery-box">
+                <img width="<?php echo $imgWidth;?>" height="<?php echo $imgHeight;?>" src="<?php echo $this->getThumbnailUrl($item)?>" alt="<?php echo $item->getTitle();?>" />
+            </a>
+            <a class="gallery-title" href="<?php echo $this->getItemUrl($item);?>">
+                <span><?php echo $item->getTitle();?></span>
+            </a>
+        </li>
+    <?php $i++; endforeach;?>
+</ul>

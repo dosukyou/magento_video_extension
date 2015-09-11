@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * open license
+ */
+-->
+<config>
+    <menu>
+        <cms>
+            <children>
+                <icc_vchannel module="icc_vchannel">
+                    <title>Gallery</title>
+                    <sort_order>0</sort_order>
+                    <action>adminhtml/gallery_category/list</action>
+                </icc_vchannel>
+            </children>
+        </cms>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <cms>
+                        <children>
+                            <icc_vchannel translate="title" module="icc_vchannel">
+                                <title>Galleries</title>
+                                <sort_order>10</sort_order>
+                            </icc_vchannel>
+                        </children>
+                    </cms>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <icc_vchannel translate="title" module="icc_vchannel">
+                                        <title>Gallery Settings</title>
+                                    </icc_vchannel>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * open license
+ */
+-->
+<layout>
+    <adminhtml_gallery_item_list>
+        <reference name="content">
+            <block type="icc_vchannel/adminhtml_item_grid_container" name="gallery_item_grid_container"/>
+        </reference>
+    </adminhtml_gallery_item_list>
+
+    <!-- video item -->
+    <adminhtml_gallery_item_list_grid>
+        <block type="icc_vchannel/adminhtml_item_grid" name="root" output="toHtml"/>
+    </adminhtml_gallery_item_list_grid>
+
+    <adminhtml_gallery_item_video_edit>
+        <reference name="left">
+            <block type="icc_vchannel/adminhtml_item_edit_tabs" name="gallery_edit_item_tabs">
+                <block type="icc_vchannel/adminhtml_item_edit_tab_general" name="gallery_edit_item_tab_general" />
+                <action method="addTab">
+                    <id>general_information</id>
+                    <block>gallery_edit_item_tab_general</block>
+                </action>
+            </block>
+        </reference>
+        <reference name="content">
+            <block type="icc_vchannel/adminhtml_item_edit" name="gallery_edit_item" />
+        </reference>
+    </adminhtml_gallery_item_video_edit>
+    <!-- / video item -->
+
+    <adminhtml_gallery_item_image_list>
+        <reference name="content">
+            <block type="icc_vchannel/adminhtml_item_grid_container" name="gallery_item_grid_container"/>
+        </reference>
+    </adminhtml_gallery_item_image_list>
+
+    <adminhtml_gallery_item_image_list_grid>
+        <block type="icc_vchannel/adminhtml_item_grid" name="root" output="toHtml"/>
+    </adminhtml_gallery_item_image_list_grid>
+
+    <adminhtml_gallery_item_image_edit>
+        <reference name="left">
+            <block type="icc_vchannel/adminhtml_item_edit_tabs" name="gallery_edit_item_tabs">
+                <block type="icc_vchannel/adminhtml_item_edit_tab_general" name="gallery_edit_item_tab_general" />
+                <action method="addTab">
+                    <id>general_information</id>
+                    <block>gallery_edit_item_tab_general</block>
+                </action>
+            </block>
+        </reference>
+        <reference name="content">
+            <block type="icc_vchannel/adminhtml_item_edit" name="gallery_edit_item" />
+        </reference>
+    </adminhtml_gallery_item_image_edit>
+
+    <adminhtml_gallery_category_list>
+        <reference name="content">
+            <block type="icc_vchannel/adminhtml_category_grid_container" name="gallery_category_grid" />
+        </reference>
+    </adminhtml_gallery_category_list>
+
+    <adminhtml_gallery_category_grid>
+        <block type="icc_vchannel/adminhtml_category_grid_container_grid" name="root" output="toHtml"/>
+    </adminhtml_gallery_category_grid>
+
+    <adminhtml_gallery_category_edit>
+        <reference name="left">
+            <block type="icc_vchannel/adminhtml_category_edit_tabs" name="gallery_edit_category_tabs">
+                <block type="icc_vchannel/adminhtml_category_edit_tab_general" name="gallery_edit_category_tab_general" />
+                <action method="addTab">
+                    <id>general_information</id>
+                    <block>gallery_edit_category_tab_general</block>
+                </action>
+            </block>
+        </reference>
+        <reference name="content">
+            <block type="icc_vchannel/adminhtml_category_edit" name="gallery_category_category" />
+        </reference>
+    </adminhtml_gallery_category_edit>
+</layout>
