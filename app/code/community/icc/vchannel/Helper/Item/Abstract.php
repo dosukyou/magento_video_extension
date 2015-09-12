@@ -99,6 +99,7 @@ abstract class ICC_Vchannel_Helper_Item_Abstract
      */
     public function prepareAndRenderView(ICC_Vchannel_Model_Item $item, Mage_Core_Controller_Varien_Action $controller)
     {
+echo "Rendering";
         $controller->loadLayout(
             array ('default', strtolower($controller->getFullActionName() . '_' . $item->getData('type')))
         );

@@ -12,11 +12,11 @@
     </modules>
     <global>
         <models>
-            <icc_vchannel>
+            <vchannel>
                 <class>ICC_Vchannel_Model</class>
                 <resourceModel>icc_vchannel_resource</resourceModel>
-            </icc_vchannel>
-            <icc_vchannel_resource>
+            </vchannel>
+            <vchannel_resource>
                 <class>ICC_Vchannel_Model_Resource</class>
                 <entities>
                     <category>
@@ -26,17 +26,17 @@
                         <table>icc_vchannel_item</table>
                     </item>
                 </entities>
-            </icc_vchannel_resource>
+            </vchannel_resource>
         </models>
         <blocks>
-            <icc_vchannel>
+            <vchannel>
                 <class>ICC_Vchannel_Block</class>
-            </icc_vchannel>
+            </vchannel>
         </blocks>
         <helpers>
-            <icc_vchannel>
+            <vchannel>
                 <class>ICC_Vchannel_Helper</class>
-            </icc_vchannel>
+            </vchannel>
         </helpers>
         <resources>
             <icc_vchannel_setup>
@@ -60,9 +60,14 @@
     <adminhtml>
         <layout>
             <updates>
+               <vchannel>
+                  <file>vchannel.xml</file>
+               </vchannel>
+            <!--
                 <icc_vchannel>
                     <file>icc/vchannel.xml</file>
                 </icc_vchannel>
+                -->
             </updates>
         </layout>
     </adminhtml>
@@ -76,12 +81,16 @@
                 </args>
             </icc_vchannel>
         </routers>
-        
         <layout>
             <updates>
+                <vchannel>
+                   <file>vchannel.xml</file>
+                </vchannel>
+            <!--
                 <icc_vchannel>
                     <file>icc/vchannel.xml</file>
                 </icc_vchannel>
+                -->
             </updates>
         </layout>
     </frontend>

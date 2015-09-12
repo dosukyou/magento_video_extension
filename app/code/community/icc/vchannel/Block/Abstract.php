@@ -41,7 +41,7 @@ abstract class ICC_Vchannel_Block_Abstract
             }
 
             if (!$this->_category instanceof ICC_Vchannel_Model_Category) {
-                $this->_category = Mage::getModel('ICC_Vchannel/category');
+                $this->_category = Mage::getModel('icc_vchannel/category');
             }
         }
 
@@ -74,7 +74,6 @@ abstract class ICC_Vchannel_Block_Abstract
         } else {
             $field = 'thumbnail';
         }
-
         return Mage::helper('icc_vchannel')->getThumbnailUrl($object, $field, $width, $height);
     }
 

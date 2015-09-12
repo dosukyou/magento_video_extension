@@ -1,0 +1,136 @@
+<?php
+/**
+ * @Open License
+ */
+
+/**  ICC_Vchannel_Block_Item_List $this */
+/**  ICC_Vchannel_Model_Category $item */
+
+/*
+$collection = Mage::getModel('icc_vchannel/category')->load(1);
+$collection2 = $collection->getItemCollection();
+//print_r($collection2);
+foreach( $collection2 as $item){
+
+print $item->getTitle();
+//	print_r( $item );//->getTitle();
+}
+exit;
+*/
+
+
+$item_cate           = $this->getCategory();
+/**  ICC_Vchannel_Model_Resource_Item_Collection $itemCollection */
+$items_Collection = $this->getItemCollection(); //$this->getCategory()->getItemCollection();//->getItems(); //$this->getItemCollection2();
+
+/*
+print "<pre>";
+print_r( $items_Collection );
+print "</pre>";
+echo "tesT";
+*/
+//print $items_Collection->getItems();
+//	print $item->getTitle();
+//print "t";
+
+//exit;
+$helper         = Mage::helper('icc_vchannel');
+$imgWidth     = 200; //$helper->getListImageWidth();
+$imgHeight    = 150; //$helper->getListImageHeight();
+$colCount    = $this->hasData('column_count') ? $this->getData('column_count') : 4;
+
+
+?>
+<style type="text/css">
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  background: tomato;
+  padding: 5px;
+  width: 200px;
+  height: 150px;
+  margin-top: 10px;
+/*  line-height: 150px;*/
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}
+
+</style>
+<h1><?php echo $item_cate->getTitle();?></h1>
+
+
+<ul class="flex-container">
+   <?php $i = 0; 
+foreach ($items_Collection as $item):
+        /** ICC_Vchannel_Model_Item $item */ 
+?>
+       <li class="flex-item">
+	<div>
+            <a href="<?php echo $this->getItemBoxUrl($item);?>" class="gallery-image gallery-box">
+<?php
+        if ( substr($item->getData("thumbnail" ), 0, 4) == "http"){
+        ?>
+ <img width="<?php echo $imgWidth;?>" height="<?php echo $imgHeight;?>" src="<?php echo $item->getData("thumbnail"); ?>" alt="<?php echo $item->getTitle();?>" />
+<?php
+        }else{
+?>
+                <img width="<?php echo $imgWidth;?>" height="<?php echo $imgHeight;?>" src="<?php echo $this->getThumbnailUrl($item)?>" alt="<?php echo $item->getTitle();?>" />
+<?php echo $item->getTitle();?>
+            </a>
+<?php
+        }
+?>
+	</div>
+	<div><span style="font-size:9px;line-height:1px;"><?php echo $item->getTitle();?></span></div>
+	</li>
+<?php $i++; endforeach;?>
+
+</ul>
+
+<?php
+
+exit;
+
+?>
+<!--
+<ul class="gallery-list gallery-item-list">
+    <?php $i = 0; foreach ($items_Collection as $item):
+        /** ICC_Vchannel_Model_Item $item */ ?>
+    <?php if($i && 0 == $i%$colCount):?>
+    </ul><ul class="gallery-list gallery-item-list">
+    <?php endif;?>
+        <li class="gallery-item">
+            <a href="<?php echo $this->getItemBoxUrl($item);?>" class="gallery-image gallery-box">
+<?php
+	if ( substr($item->getData("thumbnail" ), 0, 4) == "http"){
+	?>
+ <img width="<?php echo $imgWidth;?>" height="<?php echo $imgHeight;?>" src="<?php echo $item->getData("thumbnail"); ?>" alt="<?php echo $item->getTitle();?>" />
+
+<?php	
+	}else{
+?>
+                <img width="<?php echo $imgWidth;?>" height="<?php echo $imgHeight;?>" src="<?php echo $this->getThumbnailUrl($item)?>" alt="<?php echo $item->getTitle();?>" />
+            </a>
+<?php
+	}
+?>
+            <a class="gallery-title" href="<?php echo $this->getItemUrl($item);?>">
+                <span><?php echo $item->getTitle();?></span>
+            </a>
+        </li>
+    <?php $i++; endforeach;?>
+</ul>
+-->

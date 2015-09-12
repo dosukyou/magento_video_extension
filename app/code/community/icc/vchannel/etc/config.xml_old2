@@ -12,11 +12,11 @@
     </modules>
     <global>
         <models>
-            <icc_vchannel>
+            <vchannel>
                 <class>ICC_Vchannel_Model</class>
-                <resourceModel>icc_vchannel_resource</resourceModel>
-            </icc_vchannel>
-            <icc_vchannel_resource>
+                <resourceModel>vchannel_resource</resourceModel>
+            </vchannel>
+            <vchannel_resource>
                 <class>ICC_Vchannel_Model_Resource</class>
                 <entities>
                     <category>
@@ -26,12 +26,12 @@
                         <table>icc_vchannel_item</table>
                     </item>
                 </entities>
-            </icc_vchannel_resource>
+            </vchannel_resource>
         </models>
         <blocks>
-            <icc_vchannel>
+            <vchannel>
                 <class>ICC_Vchannel_Block</class>
-            </icc_vchannel>
+            </vchannel>
         </blocks>
         <helpers>
             <icc_vchannel>
@@ -47,41 +47,40 @@
         </resources>
     </global>
     <admin>
-        <routers>
-            <adminhtml>
-                <args>
-                    <modules>
-                        <ICC_Vchannel before="Mage_Adminhtml">ICC_Vchannel_Adminhtml</ICC_Vchannel>
-                    </modules>
-                </args>
-            </adminhtml>
-        </routers>
-    </admin>
-    <adminhtml>
+            <routers>
+                        <adminhtml>
+                                        <args>
+                                                            <modules>
+                                                                                    <ICC_Vchannel before="Mage_Adminhtml">ICC_Vchannel_Adminhtml</ICC_Vchannel>
+                                                                                                        </modules>
+                                                                                                                        </args>
+                                                                                                          </adminhtml>
+                                                                                               </routers>
+                                                                                      </admin>    
+<adminhtml>
         <layout>
             <updates>
-                <icc_vchannel>
-                    <file>icc/vchannel.xml</file>
-                </icc_vchannel>
+                <vchannel>
+                    <file>vchannel.xml</file>
+                </vchannel>
             </updates>
         </layout>
     </adminhtml>
     <frontend>
         <routers>
-            <icc_vchannel>
+            <vchannel>
                 <use>standard</use>
                 <args>
                     <module>ICC_Vchannel</module>
                     <frontName>vchannel</frontName>
                 </args>
-            </icc_vchannel>
+            </vchannel>
         </routers>
-        
         <layout>
             <updates>
-                <icc_vchannel>
-                    <file>icc/vchannel.xml</file>
-                </icc_vchannel>
+                <vchannel>
+                    <file>vchannel.xml</file>
+                </vchannel>
             </updates>
         </layout>
     </frontend>

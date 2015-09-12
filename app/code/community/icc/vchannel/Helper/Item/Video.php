@@ -100,8 +100,13 @@ class ICC_Vchannel_Helper_Item_Video
     {
         $html   = '';
         $width  = ($width  > 0 ? intval($width)  : $this->getVideoWidth());
-        $height = ($height > 0 ? intval($height) : $this->getVideoHeight());;
-        switch ($item->getData('additional/type')) {
+        $height = ($height > 0 ? intval($height) : $this->getVideoHeight());
+
+//echo $item->getData('value')."test"; // youtube, embed, file
+	$arr_video_type = explode("://", $item->getData('value'));
+	$video_type = $arr_video_type[0];
+
+        switch ($video_type) {
             case self::VIDEO_TYPE_EMBEDDED:
                 $html = $item->getData('value');
                 $html = preg_replace('/width\=[\"\']{0,1}\d+[\"\']{0,1}/si',  sprintf('width="%d"', $width), $html);
@@ -121,10 +126,12 @@ class ICC_Vchannel_Helper_Item_Video
                     . '</script>';
                 break;
             case self::VIDEO_TYPE_YOUTUBE:
+
+		$youtube_id = $arr_video_type[1];
                 $html     = '<iframe
                     style="'  . $width   . 'px;height:' . $height . 'px;"
                     frameborder="0"
-                    src="' . sprintf('http://www.youtube.com/embed/%s', $item->getData('value')) . '"
+                    src="' . sprintf('http://www.youtube.com/embed/%s', $youtube_id) . '"
                     width="'  . $width  . '"
                     height="' . $height . '"></iframe>';
                 break;

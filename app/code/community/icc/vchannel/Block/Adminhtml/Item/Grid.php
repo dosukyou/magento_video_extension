@@ -1,6 +1,7 @@
 <?php
 /**
- * @open license
+ * @copyright Copyright (c) 2014 Sergey Cherepanov (sergey@cherepanov.org.ua)
+ * @license Creative Commons Attribution 3.0 License
  */
 
 class ICC_Vchannel_Block_Adminhtml_Item_Grid

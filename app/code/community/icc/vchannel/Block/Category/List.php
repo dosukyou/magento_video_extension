@@ -16,7 +16,11 @@ class ICC_Vchannel_Block_Category_List
     {
         if (is_null($this->_categoryCollection)) {
             $this->_categoryCollection = Mage::getResourceModel('icc_vchannel/category_collection');
-            $this->_categoryCollection->addFieldToFilter('parent_id', (int) $this->getCategory()->getId());
+
+	//	->addFieldToFilter('parent_id', 1);
+           	if( $this->getCategory()->getId() ){ 
+		$this->_categoryCollection->addFieldToFilter('parent_id', (int) $this->getCategory()->getId());
+		}
         }
 
         return $this->_categoryCollection;

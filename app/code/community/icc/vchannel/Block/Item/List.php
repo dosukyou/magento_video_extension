@@ -15,6 +15,9 @@ class ICC_Vchannel_Block_Item_List
     public function getItemCollection()
     {
         if (is_null($this->_itemCollection)) {
+	//	print "test";
+	//	print_r($this->getCategory() );
+//		print_r ( $this->getCategory()->getItemCollection() );
             $this->_itemCollection = $this->getCategory()->getItemCollection();
         }
         return $this->_itemCollection;

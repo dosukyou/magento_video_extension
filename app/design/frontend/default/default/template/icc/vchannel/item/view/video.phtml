@@ -1,0 +1,14 @@
+<?php
+/**
+ * @Open License
+ */
+
+/** ICC_Vchannel_Block_Item_View $this */
+//exit;
+?>
+<h1><?php echo $this->getItem()->getTitle();?></h1>
+<?php echo Mage::helper('icc_vchannel/item_video')->getVideoHtml($this->getItem());?>
+
+<p style="margin-top:20px;padding:20px;border-top:1px solid #ccc">
+	<?php echo $this->getItem()->getData("description");?>
+</p>

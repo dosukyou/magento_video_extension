@@ -1,0 +1,39 @@
+<?php
+/**
+ * 
+ * Open License
+ */
+
+/**  ICC_Vchannel_Block_Home $this */
+
+
+$cateCollection = $this->getCategoryCollection();
+
+$helper             = Mage::helper('icc_vchannel');
+
+$imgWidth         = $helper->getCategoryListImageWidth();
+$imgHeight        = $helper->getCategoryListImageHeight();
+
+$colCount        = $this->hasData('column_count') ? $this->getData('column_count') : 4;
+
+
+//echo "itest;";
+//exit;
+?>
+<h1><?php echo $this->__('Video Gallery')?></h1>
+<ul class="gallery-list gallery-category-list">
+    <?php $i = 0; foreach ($cateCollection as $category):
+?>
+    <?php if($i && 0 == $i%$colCount):?>
+    </ul><ul class="gallery-list gallery-category-list">
+    <?php endif;?>
+    <li class="gallery-item">
+        <a class="gallery-image" href="<?php echo $this->getCategoryUrl($category)?>">
+            <img width="<?php echo $imgWidth;?>" height="<?php echo $imgHeight;?>" src="<?php echo $this->getThumbnailUrl($category)?>" alt="<?php echo $category->getTitle();?>" />
+        </a>
+        <a class="gallery-title" href="<?php echo $this->getCategoryUrl($category)?>">
+            <span><?php echo $category->getTitle();?></span>
+        </a>
+    </li>
+    <?php $i++; endforeach;?>
+</ul>
