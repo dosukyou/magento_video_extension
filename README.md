@@ -6,3 +6,5 @@
 tested ...
 
 updated tested by master
+
+sync and change via stage
